@@ -8,6 +8,13 @@
 </form>
 
 <div>
-    <a href="/signup">Sign Up</a>
-    <a href="/login">Log In</a>
+    {{#if userInSession}}
+    <a href="/Profile">Profile</a> <br>
+    <form action="/logout" method="POST">
+        <button> Logout </button>
+        </form> 
+    {{else}}
+    <a href="/auth/signup">Sign Up</a>
+    <a href="/auth/login">Log In</a>
+    {{/if}}
 </div>
