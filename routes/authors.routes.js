@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Celebrity = require("../models/Author.model");
+const Author = require("../models/Author.model");
 
 //rest of the code
 
