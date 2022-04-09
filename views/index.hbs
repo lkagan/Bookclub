@@ -1,11 +1,44 @@
 <form action="/book-search" method="GET">
-<label for="searchTerm">Search:</label>
-<input type="searchTerm" name="searchTerm" id="searchTerm">
-<button>Submit</button>
+    <label for="searchTerm">Search:</label>
+    <input type="searchTerm" name="searchTerm" id="searchTerm">
+    <button>Submit</button>
 </form>
 
-<div>
-   
-    <a href="/auth/signup">Sign Up</a>
-    <a href="/auth/login">Log In</a>
+<div id="signup" hidden>
+    <h3>Sign up</h3>
+    <form action="/auth/signup" method="POST">
+        <label> Username
+            <input type="text" name="username">
+        </label>
+        <label> Password
+            <input type="password" name="password">
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {{#if errorMessage}}
+    {{errorMessage}}
+    {{/if}}
+
+    <a href="#" onclick="switchForm(event)">Login</a>
+</div>
+
+<div id="login">
+    <h3>Login</h3>
+    <form action="/auth/login" method="POST">
+        <label> Username
+            <input type="text" name="username">
+        </label>
+        <label> Password
+            <input type="password" name="password">
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {{#if errorMessage}}
+    {{errorMessage}}
+    {{/if}}
+    <a href="#" onclick="switchForm(event)">Signup</a>
 </div>
