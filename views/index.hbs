@@ -4,6 +4,10 @@
     <button>Submit</button>
 </form>
 
+{{#if errorMessage}}
+<div class="alert alert-danger">{{errorMessage}}</div>
+{{/if}}
+
 <div id="signup" hidden>
     <h3>Sign up</h3>
     <form action="/auth/signup" method="POST">
@@ -20,10 +24,6 @@
         <button type="submit">Submit</button>
     </form>
 
-    {{#if errorMessage}}
-    {{errorMessage}}
-    {{/if}}
-
     <a href="#" onclick="switchForm(event)">Login</a>
 </div>
 
@@ -39,9 +39,5 @@
 
         <button type="submit">Submit</button>
     </form>
-
-    {{#if errorMessage}}
-    {{errorMessage}}
-    {{/if}}
     <a href="#" onclick="switchForm(event)">Signup</a>
 </div>
