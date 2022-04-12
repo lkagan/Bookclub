@@ -20,6 +20,12 @@ require("./config")(app);
 
 require('./config/session.config')(app);
 
+
+// this middleware allows us to have global user object --> "userInSession"
+// which we can use now anywhere in our application (in any HBS file)
+const globalUserObject = require("./config/global-user.config");
+app.use(globalUserObject);
+
 const capitalized = require("./utils/capitalized");
 const projectName = "Bookclub";
 

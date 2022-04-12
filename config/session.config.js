@@ -15,7 +15,7 @@ module.exports = (app) => { // app is a placeholder
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
             secure: process.env.NODE_ENV === 'production',
             httpOnly: true,
-            maxAge: 60000 // 60 * 1000 ms === 1 min
+            maxAge: 1000 * 60 * 60 * 24 * 7
             }
         })
     );
