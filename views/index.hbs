@@ -1,4 +1,4 @@
-<form action="/book-search" method="GET">
+<form action="/books/all-books" method="GET">
     <label for="searchTerm">Search:</label>
     <input type="searchTerm" name="searchTerm" id="searchTerm">
     <button>Submit</button>
@@ -23,7 +23,6 @@
 
         <button type="submit">Submit</button>
     </form>
-
     <a href="#" onclick="switchForm(event)">Login</a>
 </div>
 
@@ -41,6 +40,7 @@
     </form>
     <a href="#" onclick="switchForm(event)">Signup</a>
 </div>
+
 
 {{!-- <form action="/auth/signup" method="POST">
   <div class="row mb-3" >

@@ -16,6 +16,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 const template = 'index';
 
+
 router.post("/signup", isLoggedOut, (req, res) => {
   const { username, email, password } = req.body;
 
@@ -86,8 +87,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
       });
   });
 });
-
-
 
 
 router.post("/login", isLoggedOut, (req, res, next) => {
