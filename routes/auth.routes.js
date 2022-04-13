@@ -137,7 +137,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     });
 });
 
-router.get("/logout", isLoggedIn, (req, res) => {
+router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res
@@ -147,5 +147,6 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
+
 
 module.exports = router;
