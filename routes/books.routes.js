@@ -22,4 +22,8 @@ router.get("/all-books", (req, res, next) => {
     .catch(err => console.error(err))
 }); 
 
+// router.get("/my-books", (req, res, next) => {
+//     res.render("books/my-books");
+// })
+
 module.exports = router;
