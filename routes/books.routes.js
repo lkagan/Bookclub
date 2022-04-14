@@ -3,8 +3,6 @@ const Book = require("../models/Book.model");
 const axios = require("axios");
 axios.defaults.headers.common['x-api-key'] = process.env.API_KEY;
 
-// const search = { searchTerm }; 
-// let query = search.value;
 apiKey = "AIzaSyAwMsexndvF71mk8XWHm5Mg44DHfyJXRlY"
 router.get("/all-books", (req, res, next) => {
     const { searchTerm } = req.query;
@@ -22,8 +20,9 @@ router.get("/all-books", (req, res, next) => {
     .catch(err => console.error(err))
 }); 
 
-// router.get("/my-books", (req, res, next) => {
-//     res.render("books/my-books");
-// })
+//My books get route
+router.get("/my-books", (req, res, next) => {
+    res.render("books/my-books");
+  })
 
 module.exports = router;
