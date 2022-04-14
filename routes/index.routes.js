@@ -20,6 +20,9 @@ router.get("/profile", (req, res, next) => {
   res.render("profile");
 })
 
+router.get("/clubs/my-bookclubs", (req, res, next) => {
+  res.render("clubs/my-bookclubs");
+})
 
 
 module.exports = router;
