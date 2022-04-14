@@ -13,14 +13,6 @@
 <body>
   <header class="mb-3">
 
-    <nav>
-      {{#if userInSession}}
-      <a href="/profile">My profile</a>
-     <a href="/auth/logout">Logout</a>
-      <a href="/my-books">My Books</a>
-      {{/if}}
-    </nav>
-
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -31,15 +23,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            {{#if userInSession}}
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" href="/profile">My Profile</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/books/my-books">My Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/clubs/my-bookclubs">My Bookclubs</a>
+            </li>
+
+            {{/if}}
+
             <li class="nav-item">
               <a class="nav-link" href="/details">How It Works</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/contact">Contact Us</a>
             </li>
+            {{#if userInSession}}
+            <li class="nav-item">
+              <a class="nav-link" href="/auth/logout">Logout</a>
+            </li>
+            {{/if}}
+
+
           </ul>
         </div>
       </div>

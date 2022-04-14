@@ -24,5 +24,15 @@ router.get("/clubs/my-bookclubs", (req, res, next) => {
   res.render("clubs/my-bookclubs");
 })
 
+router.get("/clubs/create-bookclub", (req, res, next) => {
+  res.render("clubs/create-bookclub");
+})
+
+router.post("/clubs/create-bookclub", (req, res, next) => {
+  const {name, description, book} = req.body;
+
+
+  res.render("clubs/my-bookclubs");
+})
 
 module.exports = router;
