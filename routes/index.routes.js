@@ -27,9 +27,4 @@ router.get("/clubs/my-bookclubs", (req, res, next) => {
   res.render("clubs/my-bookclubs");
 })
 
-//My books get route
-router.get("/books/my-books", (req, res, next) => {
-  res.render("books/my-books");
-})
-
 module.exports = router;
