@@ -1,48 +1,52 @@
-<form action="/books/all-books" method="GET">
-    <label for="searchTerm">Search:</label>
-    <input type="searchTerm" name="searchTerm" id="searchTerm">
+<form action='/books/all-books' method='GET'>
+    <label for='searchTerm'>Search:</label>
+    <input type='searchTerm' name='searchTerm' id='searchTerm' />
     <button>Submit</button>
 </form>
 
 {{#if errorMessage}}
-<div class="alert alert-danger">{{errorMessage}}</div>
+    <div class='alert alert-danger'>{{errorMessage}}</div>
 {{/if}}
 
-<div id="signup" hidden>
+<div id='signup' hidden>
     <h3>Sign up</h3>
-    <form action="/auth/signup" method="POST">
-        <label> Username
-            <input type="text" name="username">
+    <form action='/auth/signup' method='POST'>
+        <label>
+            Username
+            <input type='text' name='username' />
         </label>
-        <label> Email
-            <input type="text" name="email">
+        <label>
+            Email
+            <input type='text' name='email' />
         </label>
-        <label> Password
-            <input type="password" name="password">
+        <label>
+            Password
+            <input type='password' name='password' />
         </label>
 
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
     </form>
-    <a href="#" onclick="switchForm(event)">Login</a>
+    <a href='#' onclick='switchForm(event)'>Login</a>
 </div>
 
-<div id="login">
+<div id='login'>
     <h3>Login</h3>
-    <form action="/auth/login" method="POST">
-        <label> Username
-            <input type="text" name="username">
+    <form action='/auth/login' method='POST'>
+        <label>
+            Username
+            <input type='text' name='username' />
         </label>
-        <label> Password
-            <input type="password" name="password">
+        <label>
+            Password
+            <input type='password' name='password' />
         </label>
 
-        <button type="submit">Submit</button>
+        <button type='submit'>Submit</button>
     </form>
-    <a href="#" onclick="switchForm(event)">Signup</a>
+    <a href='#' onclick='switchForm(event)'>Signup</a>
 </div>
 
-
-{{!-- <form action="/auth/signup" method="POST">
+{{! <form action="/auth/signup" method="POST">
   <div class="row mb-3" >
     <label for="inputEmail3" class="col-sm col-form-label">Email</label>
     <div class="col-sm">
@@ -58,4 +62,4 @@
   
   
   <button type="submit" class="btn btn-primary">Sign in</button>
-</form> --}}
+</form> }}

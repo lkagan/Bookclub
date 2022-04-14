@@ -3,6 +3,7 @@ const Book = require("../models/Book.model");
 const axios = require("axios");
 axios.defaults.headers.common['x-api-key'] = process.env.API_KEY;
 
+//Search get route
 apiKey = "AIzaSyAwMsexndvF71mk8XWHm5Mg44DHfyJXRlY"
 router.get("/all-books", (req, res, next) => {
     const { searchTerm } = req.query;
