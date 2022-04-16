@@ -76,4 +76,8 @@ router.post("/user/delete-user", (req, res, next) => {
         });
 })
 
+router.post("/thanks-page", (req, res, next) => {
+    res.render("thanks-page");
+})
+
 module.exports = router;
