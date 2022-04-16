@@ -1,7 +1,9 @@
 <form action='/books/searched-book' method='GET'>
-    <label for='searchTerm'>Search:</label>
-    <input type='searchTerm' name='searchTerm' id='searchTerm' />
-    <button>Submit</button>
+    <label for='searchTerm'></label>
+<div class="input-group">
+  <input type="searchTerm" class="form-control rounded" placeholder="Search for a book" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
 </form>
 
 {{#if errorMessage}}
