@@ -11,6 +11,11 @@ const userSchema = new Schema(
     email: String,
 
     password: String,
+    
+    profilePicture: {
+      type: String,
+      default: "https://res.cloudinary.com/dticyzm8v/image/upload/v1650121606/profile-picture2_lpzldl.jpg",
+  },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

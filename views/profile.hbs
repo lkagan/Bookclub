@@ -1,3 +1,17 @@
 <h2>Your profile</h2>
 
 <a href="/clubs/my-bookclubs">My Bookclubs</a>
+
+{{#if userInSession}}
+<h3>Welcome, {{userInSession.username}}</h3>
+<br>
+<img src="{{userInSession.profilePicture}}" alt="Profile picture" width="300">
+<br>
+<form action="/profile" method="POST" enctype="multipart/form-data">
+
+<label> Add profile picture 
+    <input type="file" name="profile-picture">
+</label>
+<button> Submit </button>
+</form>
+{{/if}}
