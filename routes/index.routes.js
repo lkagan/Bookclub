@@ -22,4 +22,9 @@ router.get('/profile', (req, res, next) => {
     res.render('profile');
 });
 
+//get route for thank you page
+router.post('/thanks-page', (req, res, next) => {
+    res.render('thanks-page');
+});
+
 module.exports = router;
