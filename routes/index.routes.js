@@ -26,32 +26,23 @@ router.get("/profile", (req, res, next) => {
   res.render("profile");
 });
 
-// router.post('/profile', cloudinary.single("profile-picture"), (req, res, next) => {
-//     User.findByIdAndUpdate(req.session.currentUser._id, {profilePicture: req.file.path}, {new: true})
-//     .then(updatedUser => {
-//         req.session.currentUser = updatedUser;
-//         res.redirect('/profile');
-//     })
-//     .catch(err => {
-//         console.log(err)
-//         next(err);
-//     });
-// });
-
 router.get("/user/edit-user", (req, res, next) => {
   res.render("user/edit-user");
 });
 
-router.post("/user/edit-user", cloudinary.single("profile-picture"),(req, res, next) => {
+router.post(
+  "/user/edit-user",
+  cloudinary.single("profile-picture"),
+  (req, res, next) => {
     // console.log(req.file)
     let path;
 
-    if(req.file){
-        path = req.file.path;
+    if (req.file) {
+      path = req.file.path;
     }
 
     // if(req.body.password){}
-    
+
     User.findByIdAndUpdate(
       req.session.currentUser._id,
       {
@@ -73,6 +64,16 @@ router.post("/user/edit-user", cloudinary.single("profile-picture"),(req, res, n
   }
 );
 
-
+router.post("/user/delete-user", (req, res, next) => {
+    User.findByIdAndDelete(req.session.currentUser._id)
+        .then(() => {
+        req.session.destroy();
+        res.redirect("/");
+        })
+        .catch((err) => {
+        console.log(err);
+        next(err);
+        });
+})
 
 module.exports = router;
