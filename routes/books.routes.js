@@ -23,15 +23,17 @@ router.get('/searched-book', (req, res, next) => {
         .catch((err) => console.error(err));
 });
 
+///books/my-books/{{bookData.title}}
+router.post('/my-books/:title/:authors', (req, res, next) => {
+    console.log(req.params.title, req.params.authors);
+
+    //current user favorites
+
+    res.redirect('/books/my-books');
+});
+
 //My books get route
 router.get('/my-books', (req, res, next) => {
     res.render('books/my-books');
 });
-
-router.post('/books/my-books', (req, res, next) => {
-    const { bookData } = req.body;
-
-    res.render('books/my-books');
-});
-
 module.exports = router;

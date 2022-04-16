@@ -3,8 +3,8 @@
 <h2>{{bookData.authors}}</h1>
 <h3>{{bookData.description}}</h1>
 
-<form action="/books/my-books" method="POST">
-    <button onclick="{{addToMyBooks}}">Add to my books</button>
+<form action="/books/my-books/{{bookData.title}}/{{bookData.authors}}" method="POST">
+    <button>Add to my books</button>
 </form>
 
 
