@@ -10,7 +10,7 @@ router.get('/searched-book', (req, res, next) => {
     axios
         .get('https://www.googleapis.com/books/v1/volumes?q=' + searchTerm)
         .then((responseFromAPI) => {
-            // console.log({info: responseFromAPI.data.items[0].volumeInfo})
+            console.log({info: responseFromAPI.data.items[0].volumeInfo})
             // imageLinks: {thumbnail}
             const { title, authors, description } =
                 responseFromAPI.data.items[0].volumeInfo;
