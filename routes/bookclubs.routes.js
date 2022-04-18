@@ -5,8 +5,14 @@ const Bookclub = require("../models/Bookclub.model");
 
 //My bookclubs get route
 router.get("/my-bookclubs", (req, res, next) => {
-    res.render("clubs/my-bookclubs");
+    Bookclub.find()
+        .then((bookclubs) => {
+    res.render("clubs/my-bookclubs", { bookclubs });
 })
+.catch((err) => {
+    console.log(err);
+});
+});
 
 //Create a Bookclubs route
 router.get("/create-bookclub", (req, res, next) => {

@@ -5,3 +5,12 @@
 </button>
 </form>
 
+{{#each bookclubs}}
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">{{description}}</p>
+        <a href="/bookclub/{{id}}" class="btn btn-primary">View</a>
+    </div>
+</div>
+{{/each}}
