@@ -17,9 +17,11 @@ const userSchema = new Schema(
             default:
                 'https://res.cloudinary.com/dticyzm8v/image/upload/v1650121606/profile-picture2_lpzldl.jpg',
         },
-        favorites: {
-            type: [{ Array }],
-        },
+        // favorites: [
+        //     {
+        //         type: Object,
+        //     },
+        // ],
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`
