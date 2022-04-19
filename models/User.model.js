@@ -17,7 +17,7 @@ const userSchema = new Schema(
             default:
                 'https://res.cloudinary.com/dticyzm8v/image/upload/v1650121606/profile-picture2_lpzldl.jpg',
         },
-        favorites: {
+        myBooks: {
             type: [{ Array }],
         },
     },

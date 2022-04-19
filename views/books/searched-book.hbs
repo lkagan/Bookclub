@@ -2,7 +2,10 @@
 <img src="{{this.volumeInfo.imageLinks.smallThumbnail}}" height="100" />
 title: {{this.volumeInfo.title}}<br>
 authors: {{this.volumeInfo.authors}}<br>
-<form action="/books/my-books/{{bookData.title}}/{{bookData.authors}}" method="POST">
+
+<!-- TODO: hide this when not logged in -->
+<form action="/books/my-books" method="POST">
+    <input type="hidden" name="bookId" value="{{this.id}}">
     <button>Add to my books</button>
 </form>
 

@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const Book = require('../models/Book.model');
+const User = require('../models/User.model');
 const axios = require('axios');
+const session = require('express-session');
 axios.defaults.headers.common['x-api-key'] = process.env.API_KEY;
 
 //Search get route
@@ -15,14 +17,14 @@ router.get('/searched-book', (req, res, next) => {
         .catch((err) => console.error(err));
 });
 
-///books/my-books/{{bookData.title}}
-router.post('/my-books/:title/:authors', (req, res, next) => {
-    console.log(req.params.title, req.params.authors);
-
-    //current user favorites
-
-    res.redirect('/books/my-books');
+router.post('/my-books', (req, res, next) => {
+    const { bookId } = req.body;
+    User.findOneAndUpdate( {_id: req.session.currentUser._id}, { $push: { myBooks: {bookId} } } )
+        .then(() => res.redirect('/books/my-books'))
+        .catch((err) => console.error(err));
 });
+
+
 
 //My books get route
 router.get('/my-books', (req, res, next) => {
