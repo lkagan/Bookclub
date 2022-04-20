@@ -42,10 +42,6 @@ h3 {
     font-size: medium;
 }
 
-label {
-    color: white;
-}
-
 #aLogin {
     position: absolute;
     top: 1px;
@@ -62,4 +58,20 @@ label {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(158, 157, 157);
     font-size: 15px;
+}
+
+#welcome {
+    color: black;
+}
+
+#username {
+    color: white;
+}
+
+#password {
+    color: white;
+}
+
+#email {
+    color: white;
 }

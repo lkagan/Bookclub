@@ -37,15 +37,15 @@
                         <div id='signup' hidden>
                             <h3 id="h3Signup">Sign up:</h3>
                         <form action='/auth/signup' method='POST'>
-                            <label>
+                            <label id='username'>
                                 Username
                                 <input type='text' name='username' />
                             </label>
-                            <label>
+                            <label id='email'>
                                 Email
                             <input type='text' name='email' />
                             </label>
-                            <label>
+                            <label id='password'>
                                 Password
                                 <input type='password' name='password' />
                             </label>
@@ -58,11 +58,11 @@
                         <div id='login'>
                             <h3>Login:</h3>
                         <form action='/auth/login' method='POST'>
-                            <label>
+                            <label id='username'>
                                 Username
                                 <input type='text' name='username' />
                             </label>
-                            <label>
+                            <label id='password'>
                                 Password
                                 <input type='password' name='password' />
                             </label>
