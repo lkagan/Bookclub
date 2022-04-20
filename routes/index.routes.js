@@ -30,10 +30,7 @@ router.get("/user/edit-user", (req, res, next) => {
   res.render("user/edit-user");
 });
 
-router.post(
-  "/user/edit-user",
-  cloudinary.single("profile-picture"),
-  (req, res, next) => {
+router.post("/user/edit-user", cloudinary.single("profile-picture"), (req, res, next) => {
     // console.log(req.file)
     let path;
 

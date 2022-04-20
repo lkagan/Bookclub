@@ -45,11 +45,36 @@ router.get("/bookclub-details/:id", (req, res, next) => {
     });
 })
 
-router.get("/edit-bookclub", (req, res, next) => {
-  res.render("user/edit-bookclub");
+router.get("/edit-bookclub/:id", (req, res, next) => {
+  Bookclub.findById(req.params.id)
+    .then((bookclub) => {
+  res.render("clubs/edit-bookclub", { bookclub });
+    })
+    .catch((err) => {
+      console.log(err);
+    }
+  );
 });
 
-{/* <form action="/clubs/{{bookclub._id}}/delete-bookclub" method="POST"></form> */}
+router.post("/edit-bookclub/:id", (req, res, next) => {
+Bookclub.findByIdAndUpdate(req.params.id, {
+    name: req.body.name,
+    description: req.body.description,
+    book: req.body.book,
+},
+{ new: true })
+    .then((bookclub) => {
+      res.redirect("/clubs/my-bookclubs");
+    }
+    )
+    .catch((err) => {
+      console.log(err);
+    }
+    );
+
+})
+
+
 router.post("/:id/delete-bookclub", (req, res, next) => {
   Bookclub.findByIdAndDelete(req.params.id)
     .then(() => {
