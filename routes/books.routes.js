@@ -12,22 +12,45 @@ router.get('/searched-book', (req, res, next) => {
     axios
         .get('https://www.googleapis.com/books/v1/volumes?q=' + searchTerm)
         .then((responseFromAPI) => {
-            res.render('books/searched-book', {books: responseFromAPI.data.items });
+            res.render('books/searched-book', {
+                books: responseFromAPI.data.items,
+            });
         })
         .catch((err) => console.error(err));
 });
 
 router.post('/my-books', (req, res, next) => {
     const { bookId } = req.body;
-    User.findOneAndUpdate( {_id: req.session.currentUser._id}, { $push: { myBooks: {bookId} } } )
+    User.findOneAndUpdate(
+        { _id: req.session.currentUser._id },
+        { $push: { myBooks: { bookId } } }
+    )
         .then(() => res.redirect('/books/my-books'))
         .catch((err) => console.error(err));
 });
-
-
 
 //My books get route
 router.get('/my-books', (req, res, next) => {
     res.render('books/my-books');
 });
 module.exports = router;
+
+//router.post('/my-books/:title/:authors', (req, res, next) => {
+//     // console.log(req.params.title, req.params.authors);
+//     User.findByIdAndUpdate(
+//         req.session.currentUser._id,
+//         {
+//             $push: {
+//                 favorites: {
+//                     title: req.params.title,
+//                     authors: req.params.authors,
+//                 },
+//             },
+//         },
+//         { new: true }
+//     )
+//         .then(() => {
+//             res.redirect('/books/my-books');
+//         })
+//         .catch((err) => console.error(err));
+// });
