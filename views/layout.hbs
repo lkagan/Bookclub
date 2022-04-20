@@ -33,6 +33,45 @@
                             <a class='nav-link' href='/clubs/my-bookclubs'>My Bookclubs</a>
                         </li>
 
+                        {{else}}
+                        <div id='signup' hidden>
+                            <h3 id="h3Signup">Sign up:</h3>
+                        <form action='/auth/signup' method='POST'>
+                            <label>
+                                Username
+                                <input type='text' name='username' />
+                            </label>
+                            <label>
+                                Email
+                            <input type='text' name='email' />
+                            </label>
+                            <label>
+                                Password
+                                <input type='password' name='password' />
+                            </label>
+
+                        <button type='submit'>Submit</button>
+                        </form>
+                            <a id="aSignup" href='#' onclick='switchForm(event)'>Login</a>
+                        </div>
+
+                        <div id='login'>
+                            <h3>Login:</h3>
+                        <form action='/auth/login' method='POST'>
+                            <label>
+                                Username
+                                <input type='text' name='username' />
+                            </label>
+                            <label>
+                                Password
+                                <input type='password' name='password' />
+                            </label>
+
+                            <button type='submit'>Submit</button>
+                            </form>
+                            <a id="aLogin" href='#' onclick='switchForm(event)'>Signup</a>
+                        </div>
+
                         {{/if}}
                         <li class='nav-item' >
                             <a class='nav-link' href='/details'>How It Works</a>
