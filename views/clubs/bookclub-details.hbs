@@ -1,0 +1,13 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{bookclub.name}}</h5>
+        <h6 class="card-text">{{bookclub.book}}</h6>
+        <p class="card-text">{{bookclub.description}}</p>
+
+
+        <div class="mb-3">
+            <form action="/clubs/edit-bookclubs" method="GET">
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>

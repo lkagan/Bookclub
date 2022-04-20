@@ -35,4 +35,18 @@ router.post("/create-bookclub", (req, res, next) => {
     });
 });
 
+router.get("/bookclub-details/:id", (req, res, next) => {
+  Bookclub.findById(req.params.id)
+    .then((bookclub) => {
+      res.render("clubs/bookclub-details", { bookclub });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+})
+
+router.get("/clubs/edit-bookclub", (req, res, next) => {
+  res.render("user/edit-bookclub");
+});
+
 module.exports = router;
