@@ -27,7 +27,7 @@ h1 {
 
 h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: rgb(158, 157, 157);
     position: absolute;
     left: -57px;
     top: 1px;
@@ -36,7 +36,7 @@ h3 {
 
 #h3Signup {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: rgb(158, 157, 157);
     position: absolute;
     left: -70px;
     font-size: medium;
