@@ -1,15 +1,17 @@
-
 {{#if userInSession}}
-<h3>Welcome, {{userInSession.username}}! <span>😊</span></h3>
-<br>
-<img src="{{userInSession.profilePicture}}" alt="Profile picture" width="300">
+    <h2 id='welcome'>Welcome, {{userInSession.username}}! <span>😊</span></h2>
+    <br />
+    <img
+        src='{{userInSession.profilePicture}}'
+        alt='Profile picture'
+        width='300'
+    />
 
-<br>
-<br>
-<div class="mb-3">
-<form action="/user/edit-user" method="GET">
-    <button type="submit" class="btn btn-primary">Edit profile</button>
-    </form>
+    <br />
+    <br />
+    <div class='mb-3'>
+        <form action='/user/edit-user' method='GET'>
+            <button type='submit' class='btn btn-primary'>Edit profile</button>
+        </form>
     </div>
 {{/if}}
-
