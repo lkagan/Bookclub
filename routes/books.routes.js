@@ -19,14 +19,16 @@ router.get('/searched-book', (req, res, next) => {
         .catch((err) => console.error(err));
 });
 
-router.post('/my-books', (req, res, next) => {
+router.post('/my-books', async (req, res, next) => {
     const { bookId } = req.body;
-    User.findOneAndUpdate(
-        { _id: req.session.currentUser._id },
-        { $push: { myBooks: { bookId } } }
-    )
-        .then(() => res.redirect('/books/my-books'))
-        .catch((err) => console.error(err));
+    try {
+        const user = await User.findOne({ _id: req.session.currentUser._id });
+        user.myBooks = user.myBooks === undefined ? [bookId] : [...user.myBooks, bookId];
+        await user.save();
+        res.redirect('/books/my-books');
+    } catch (e) {
+        console.log(e)
+    }
 });
 
 //My books get route
